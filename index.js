@@ -1,25 +1,43 @@
-let radio = document.querySelector('input#matching3');
-let match = document.querySelector('input.edit');
-let output = document.querySelector('input#output');
-let text = document.querySelector('label.cats');
+document.addEventListener('DOMContentLoaded', function () {
 
-radio.addEventListener('change', updateInput);
-match.addEventListener('change', updateInput);
+    // Assign event change 
+    let option = document.querySelectorAll('input.matching');
+    for(let i=0; i<option.length; i++) {
+        option[i].addEventListener('change', outputInput);
+        
+        // option[i].addEventListener('change', updateTextInput);
+        console.log(option[i]);
+    }
 
-function updateInput() {
-  let value = text.innerHTML.replace(/\<input.*\>/i, match.value);
-  console.log(value);
-  output.value = value;
-}
+    let edit = document.querySelectorAll('input.edit');
+    for(let j=0; j<edit.length; j++) {
+        edit[j].addEventListener('change', updateTextInput);
+    }
 
+    let form = document.getElementById('matching');
+    let output = document.querySelector('textarea#output');
+    let results = document.querySelector('div#result');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let data = new FormData(form);
+        let result = output.value;
+        data.append('matching', result);
+        let awardName = data.getAll('matching');
+        results.innerHTML = awardName;
+        console.log('last', awardName);
+    });
 
-let awardForm = document.getElementById('matching');
-awardForm.addEventListener('submit', function(e){
-  e.preventDefault();
-  let data = new FormData(awardForm);
-  let awardAmount = document.getElementById('output').value;
-  data.append('amount', awardAmount);
-  let awardName = data.getAll('amount');
-  output.innerHTML = awardName;
-  console.log('last', awardName);
+    // Functions
+    function outputInput(e) {
+        let value = document.querySelector(`label[for="${e.target.id}"]`).innerHTML;
+        output.value = value;
+    }
+    function updateTextInput(e) {
+        let editTarget = e.target;
+        let value = editTarget.parentNode.innerHTML.replace(/\<input.*\>/i, editTarget.value);
+        output.value = value;
+    }
 });
+
+//grab all the inputs
+//loop through the inputs and attach function to get their innerHTML and change the output value to that value 

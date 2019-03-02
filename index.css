@@ -11,16 +11,19 @@ body {
     font-size: 62.5%;
 }
 /* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
 .forms {
     padding: 50px;
     font-size: 1.2em;
 }
-.forms__matching {
-    display: flex;
-    flex-direction: column;
-}
 /* Inputs */
-input:active {
+input {
+    margin: 5px;
+}
+input.active {
     border: 1px solid black;
 }
 .edit {
