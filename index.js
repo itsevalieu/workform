@@ -4,7 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let option = document.querySelectorAll('input.matching');
     for(let i=0; i<option.length; i++) {
         option[i].addEventListener('change', outputInput);
-        
+        option[i].addEventListener('click', function(e) {
+            let targetElement = document.querySelector(`label[for="${e.target.id}"]`);
+            if(targetElement.hasChildNodes) {
+                console.log(targetElement.children[0]);
+                targetElement.children[0].disabled = false;
+            } else {
+                console.log('nah');
+            }
+        });
         // option[i].addEventListener('change', updateTextInput);
         console.log(option[i]);
     }
@@ -14,15 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
         edit[j].addEventListener('change', updateTextInput);
     }
 
-    let form = document.getElementById('matching');
+    let matchingForm = document.getElementById('matching');
     let output = document.querySelector('textarea#output');
-    let results = document.querySelector('div#result');
-    form.addEventListener('submit', function(e) {
+    let results = document.querySelector('textarea#result');
+    matchingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        let data = new FormData(form);
+        let matchingData = new FormData(matchingForm);
         let result = output.value;
-        data.append('matching', result);
-        let awardName = data.getAll('matching');
+        matchingData.append('matching', result);
+        let awardName = matchingData.getAll('matching');
         results.innerHTML = awardName;
         console.log('last', awardName);
     });
