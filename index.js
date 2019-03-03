@@ -4,19 +4,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let option = document.querySelectorAll('input.matching');
     for(let i=0; i<option.length; i++) {
         option[i].addEventListener('change', outputInput);
-        option[i].addEventListener('click', function(e) {
+        option[i].addEventListener('change', function(e) {
             let targetElement = document.querySelector(`label[for="${e.target.id}"]`);
-            if(targetElement.hasChildNodes) {
-                console.log(targetElement.children[0]);
-                targetElement.children[0].disabled = false;
-            } else {
-                console.log('nah');
-            }
+            if (e.target.checked) {
+                if(targetElement.children !== 0) {
+                    for(let i=0; i<targetElement.children.length; i++) {
+                        targetElement.children[i].disabled = false;
+                    }
+                } else {
+                    console.log('no child elements');
+                }
+            } 
         });
-        // option[i].addEventListener('change', updateTextInput);
-        console.log(option[i]);
     }
-
+    
     let edit = document.querySelectorAll('input.edit');
     for(let j=0; j<edit.length; j++) {
         edit[j].addEventListener('change', updateTextInput);
