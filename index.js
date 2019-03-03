@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     matchingForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let matchingData = new FormData(matchingForm);
+        matchingData.delete('matching'); //to get rid of weird on value
         matchingData.append('matching', matchingOutput.value);
         matchingResult.innerHTML = matchingData.getAll('matching');
     });
@@ -30,8 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     financialForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let financialData = new FormData(financialForm);
+        financialData.delete('financial'); //to get rid of weird on value
         financialData.append('financial', financialOutput.value);
         financialResult.innerHTML = financialData.getAll('financial');
+
     });
 
     // Eligibility
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     eligibilityForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let eligibilityData = new FormData(eligibilityForm);
+        financialData.delete('financial'); //to get rid of weird on value
         eligibilityData.append('eligibility', eligibilityOutput.value);
         eligibilityResult.innerHTML = eligibilityData.getAll('eligibility');
     });
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     applicationForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let applicationData = new FormData(applicationForm);
+        applicationData.delete('application'); //to get rid of weird on value
         applicationData.append('application', applicationOutput.value);
         applicationResult.innerHTML = applicationData.getAll('application');
     });
@@ -63,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let contactData = new FormData(contactForm);
+        contactData.delete('contact'); //to get rid of weird on value
         contactData.append('contact', contactOutput.value);
         contactResult.innerHTML = contactData.getAll('contact');
     });
@@ -74,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     summaryForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let summaryData = new FormData(summaryForm);
+        summaryData.delete('summary'); //to get rid of weird on value
         summaryData.append('summary', summaryOutput.value);
         summaryResult.innerHTML = summaryData.getAll('summary');
     });
@@ -103,4 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } 
     }
+
 });
+// get all values for formdatas for each form. 
