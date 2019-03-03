@@ -9,18 +9,30 @@ body {
     padding: 0;
     font-family: sans-serif;
     font-size: 62.5%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 50%;
 }
+/* Program Sections */
+.program__sections {
+    display: flex;
+    flex-flow: row wrap;   
+}
+.program__forms, .program__outputs {
+    width: 50%;
+    padding: 25px;
+}
+
 /* Forms */
 form {
     display: flex;
     flex-direction: column;
 }
 .forms {
-    padding: 50px;
     font-size: 1.2em;
 }
 /* Inputs */
-input {
+span {
     margin: 5px;
 }
 input.active {
@@ -33,6 +45,8 @@ input.active {
     text-align: center;
 }
 /* Results */
-#endresult {
-    border: 1px solid red;
+.results__textarea {
+    width: 100%;
+    height: 80%;
+    padding: 10px;
 }
