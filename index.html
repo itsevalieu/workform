@@ -12,37 +12,37 @@
     <div class='program__sections'>
         <form id='matching' class='program__forms'>
             <h2>Matching Section</h2>
-            <span><input type='radio' name='matching' id='matching1' class='matching'>
+            <span><input type='radio' name='matching' id='matching1' class='matching option'>
                 <label for='matching1'>There are no stated matching requirements for this program. </label>
             </span>
-            <span><input type='radio' name='matching' id='matching2' class='matching'>
+            <span><input type='radio' name='matching' id='matching2' class='matching option'>
                 <label for='matching2'>Matching funds are not required for this program. </label>
             </span>
-            <span><input type='radio' name='matching' id='matching3' class='matching'>
+            <span><input type='radio' name='matching' id='matching3' class='matching option'>
                 <label for='matching3'>Applicants must provide at least <input class='edit' type='text' value='' disabled> percent of the total project cost via cash or in-kind contributions.</label>
             </span>
-            <span><input type='radio' name='matching' id='matching4' class='matching'>
+            <span><input type='radio' name='matching' id='matching4' class='matching option'>
                 <label for='matching4'>There are no matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='matching' id='matching5' class='matching'>
+            <span><input type='radio' name='matching' id='matching5' class='matching option'>
                 <label for='matching5'>There are no stated matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='matching' id='matching6' class='matching'>
+            <span><input type='radio' name='matching' id='matching6' class='matching option'>
                 <label for='matching6'>Matching funds are not required for this program; however, applicants should detail any amount of matching funds in the application.</label>
             </span>
-            <textarea rows='4' cols='50' id='output' hidden></textarea>
+            <textarea rows='4' cols='50' id='matchingOutput' hidden></textarea>
             <input type='submit'>
         </form>
         <div class='program__outputs'>
             <h2>Matching Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='matchingResult' class='results__textarea'></textarea>    
         </div>
     </div>
 
     <div class='program__sections'>
         <form id='financial' class='program__forms'>
             <h2>Financial Section</h2>
-            <span><input type='radio' name='financial' id='financial1' class='financial'>
+            <span><input type='radio' name='financial' id='financial1' class='financial option'>
                 <label for='financial1'> Approximately 
                     <input class='edit' type='text' value='' disabled> is available to support 
                     <input class='edit' type='text' value='' disabled> awards for FY 
@@ -52,146 +52,146 @@
                     <input class='edit' type='text' value='' disabled>.
                 </label>
             </span>
-            <span><input type='radio' name='financial' id='financial2' class='financial'>
+            <span><input type='radio' name='financial' id='financial2' class='financial option'>
                 <label for='financial2'>Approximately 
-                    <input class='edit' type='text'> is available to support 
-                    <input class='edit' type='text'> awards through this program.
+                    <input class='edit' type='text' value='' disabled> is available to support 
+                    <input class='edit' type='text' value='' disabled> awards through this program.
                 </label>
             </span>
-            <span><input type='radio' name='financial' id='financial3' class='financial'>
+            <span><input type='radio' name='financial' id='financial3' class='financial option'>
                 <label for='financial3' class='cats'>Applicants must provide at least 
-                    <input class='edit' type='text'> percent of the total project cost via cash or in-kind contributions.
+                    <input class='edit' type='text' value='' disabled> percent of the total project cost via cash or in-kind contributions.
                 </label>
             </span>
-            <span><input type='radio' name='financial' id='financial4' class='financial'>
+            <span><input type='radio' name='financial' id='financial4' class='financial option'>
                 <label for='financial4'>An unspecified amount of funding is available to support awards through this program.</label>
             </span>
-            <span><input type='radio' name='financial' id='financial5' class='financial'>
+            <span><input type='radio' name='financial' id='financial5' class='financial option'>
                 <label for='financial5'>An unspecified amount of funding is available to support 
-                    <input class='edit' type='text'> awards ranging from 
-                    <input class='edit' type='text'> to 
-                    <input class='edit' type='text'> through this program.
+                    <input class='edit' type='text' value='' disabled> awards ranging from 
+                    <input class='edit' type='text' value='' disabled> to 
+                    <input class='edit' type='text' value='' disabled> through this program.
                 </label>
             </span>
-            <textarea rows='4' cols='50' id='output' value=''></textarea>
+            <textarea rows='4' cols='50' id='financialOutput' value=''></textarea>
             <input type='submit'>
         </form>
         <div class='program__outputs'>
             <h2>Financial Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='financialResult' class='results__textarea'></textarea>    
         </div>
     </div>
 
     <div class='program__sections'>
         <form id='eligibility' class='program__forms'>
             <h2>Eligibility Section</h2>
-            <span><input type='radio' name='eligibility' id='eligibility1' class='eligibility'>
+            <span><input type='radio' name='eligibility' id='eligibility1' class='eligibility option'>
                 <label for='eligibility1' class='forms__label'>There are no stated eligibility requirements for this program.</label>
             </span>
-            <span><input type='radio' name='eligibility' id='eligibility2' class='eligibility'>
+            <span><input type='radio' name='eligibility' id='eligibility2' class='eligibility option'>
                 <label for='eligibility2'>Eligibility for this program is unrestricted.</label>
             </span>
-            <textarea rows='4' cols='50' id='output' value=''></textarea>
+            <textarea rows='4' cols='50' id='eligibilityOutput' value=''></textarea>
             <input type='submit'>
         </form>
         <div class='program__outputs'>
             <h2>Eligibility Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='eligibilityResult' class='results__textarea'></textarea>    
         </div>
     </div>
     
     <div class='program__sections'>
         <form id='application' class='program__forms'>
             <h2>Application Section</h2>
-            <span><input type='radio' name='application' id='application1'>
+            <span><input type='radio' name='application' id='application1' class='application option'>
                 <label for='application1'>Applications are accepted on a rolling basis.</label>
             </span>
-            <span><input type='radio' name='application' id='application2'>
+            <span><input type='radio' name='application' id='application2' class='application option'>
                 <label for='application2'>Applications must be submitted online at www.ecivis.com/grants.gov.</label></span>
-            <span><input type='radio' name='application' id='application3'>
+            <span><input type='radio' name='application' id='application3' class='application option'>
                 <label for='application3'>Applicants must provide at least 
-                    <input class='edit' type='text'> percent of the total project cost via cash or in-kind contributions.
+                    <input class='edit' type='text' value='' disabled> percent of the total project cost via cash or in-kind contributions.
                 </label>
             </span>
-            <span><input type='radio' name='application' id='application4'>
+            <span><input type='radio' name='application' id='application4' class='application option'>
                 <label for='application4'>There are no matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='application' id='application5'>
+            <span><input type='radio' name='application' id='application5' class='application option'>
                 <label for='application5'>There are no stated matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='application' id='application6'>
+            <span><input type='radio' name='application' id='application6' class='application option'>
                 <label for='application6'>Matching funds are not required for this program; however, applicants should detail any amount of matching funds in the application.</label>
             </span>
-            <textarea rows='4' cols='50' id='output' value=''></textarea>
+            <textarea rows='4' cols='50' id='applicationOutput' value=''></textarea>
             <input type='submit'>
         </form>
         <div class='program__outputs'>
             <h2>Application Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='applicationResult' class='results__textarea'></textarea>    
         </div>
     </div>
     
     <div class='program__sections'>
         <form id='contact' class='program__forms'>
             <h2>Contact Section</h2>
-            <span><input type='radio' name='contact' id='contact1' class='contact'>
+            <span><input type='radio' name='contact' id='contact1' class='contact option'>
                 <label for='contact1'>There are no stated matching requirements for this program. </label>
             </span>
-            <span><input type='radio' name='contact' id='contact2' class='contact'>
+            <span><input type='radio' name='contact' id='contact2' class='contact option'>
                 <label for='contact2'>Matching funds are not required for this program. </label>
             </span>
-            <span><input type='radio' name='contact' id='contact3' class='contact'>
+            <span><input type='radio' name='contact' id='contact3' class='contact option'>
                 <label for='contact3'>Applicants must provide at least 
-                    <input class='edit' type='text'> percent of the total project cost via cash or in-kind contributions.
+                    <input class='edit' type='text' value='' disabled> percent of the total project cost via cash or in-kind contributions.
                 </label>
             </span>
-            <span><input type='radio' name='contact' id='contact4' class='contact'>
+            <span><input type='radio' name='contact' id='contact4' class='contact option'>
                 <label for='contact4'>There are no matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='contact' id='contact5' class='contact'>
+            <span><input type='radio' name='contact' id='contact5' class='contact option'>
                 <label for='contact5'>There are no stated matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='contact' id='contact6' class='contact'>
+            <span><input type='radio' name='contact' id='contact6' class='contact option'>
                 <label for='contact6'>Matching funds are not required for this program; however, applicants should detail any amount of matching funds in the application.</label>
             </span>
-            <textarea rows='4' cols='50' id='output' value=''></textarea>
+            <textarea rows='4' cols='50' id='contactOutput' value=''></textarea>
             <input type='submit'>
         </form>    
         <div class='program__outputs'>
             <h2>Contact Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='contactResult' class='results__textarea'></textarea>    
         </div>
     </div>
 
     <div class='program__sections'>
         <form id='summary' class='program__forms'>
             <h2>Summary Section</h2>
-            <span><input type='radio' name='summary' id='summary1' class='summary'>
+            <span><input type='radio' name='summary' id='summary1' class='summary option'>
                 <label for='summary1'>There are no stated matching requirements for this program.</label>
             </span>
-            <span><input type='radio' name='summary' id='summary2' class='summary'>
+            <span><input type='radio' name='summary' id='summary2' class='summary option'>
                 <label for='summary2'>Matching funds are not required for this program.</label>
             </span>
-            <span><input type='radio' name='summary' id='summary3' class='summary'>
+            <span><input type='radio' name='summary' id='summary3' class='summary option'>
                 <label for='summary3'>Applicants must provide at least 
-                    <input class='edit' type='text'> percent of the total project cost via cash or in-kind contributions.
+                    <input class='edit' type='text' value='' disabled> percent of the total project cost via cash or in-kind contributions.
                 </label>
             </span>
-            <span><input type='radio' name='summary' id='summary4' class='financial'>
+            <span><input type='radio' name='summary' id='summary4' class='financial option'>
                 <label for='summary4'>There are no matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='summary' id='summary5' class='financial'>
+            <span><input type='radio' name='summary' id='summary5' class='financial option'>
                 <label for='summary5'>There are no stated matching requirements for this program; however, applicants are encouraged to provide cash or in-kind matching contributions.</label>
             </span>
-            <span><input type='radio' name='summary' id='summary6' class='financial'>
+            <span><input type='radio' name='summary' id='summary6' class='financial option'>
                 <label for='summary6'>Matching funds are not required for this program; however, applicants should detail any amount of matching funds in the application.</label>
             </span>
-            <textarea rows='4' cols='50' id='output' value=''></textarea>
+            <textarea rows='4' cols='50' id='summaryOutput' value=''></textarea>
             <input type='submit'>
         </form>
         <div class='program__outputs'>
             <h2>Summary Results</h2>
-            <textarea id='result' class='results__textarea'></textarea>    
+            <textarea id='summaryResult' class='results__textarea'></textarea>    
         </div>
     </div>
 

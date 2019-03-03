@@ -1,52 +1,106 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Assign event change 
-    let option = document.querySelectorAll('input.matching');
+ 
+    //Assign all input.options 
+    let option = document.querySelectorAll('input.option');
     for(let i=0; i<option.length; i++) {
         option[i].addEventListener('change', outputInput);
-        option[i].addEventListener('change', function(e) {
-            let targetElement = document.querySelector(`label[for="${e.target.id}"]`);
-            if (e.target.checked) {
-                if(targetElement.children !== 0) {
-                    for(let i=0; i<targetElement.children.length; i++) {
-                        targetElement.children[i].disabled = false;
-                    }
-                } else {
-                    console.log('no child elements');
-                }
-            } 
-        });
+        option[i].addEventListener('change', toggleDisable);
     }
-    
+   
     let edit = document.querySelectorAll('input.edit');
     for(let j=0; j<edit.length; j++) {
         edit[j].addEventListener('change', updateTextInput);
     }
 
+    // Matching
     let matchingForm = document.getElementById('matching');
-    let output = document.querySelector('textarea#output');
-    let results = document.querySelector('textarea#result');
+    let matchingOutput = document.querySelector('textarea#matchingOutput');
+    let matchingResult = document.querySelector('textarea#matchingResult');
     matchingForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let matchingData = new FormData(matchingForm);
-        let result = output.value;
-        matchingData.append('matching', result);
-        let awardName = matchingData.getAll('matching');
-        results.innerHTML = awardName;
-        console.log('last', awardName);
+        matchingData.append('matching', matchingOutput.value);
+        matchingResult.innerHTML = matchingData.getAll('matching');
+    });
+
+    // Financial
+    let financialForm = document.getElementById('financial');
+    let financialOutput = document.querySelector('textarea#financialOutput');
+    let financialResult = document.querySelector('textarea#financialResult');
+    financialForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let financialData = new FormData(financialForm);
+        financialData.append('financial', financialOutput.value);
+        financialResult.innerHTML = financialData.getAll('financial');
+    });
+
+    // Eligibility
+    let eligibilityForm = document.getElementById('eligibility');
+    let eligibilityOutput = document.querySelector('textarea#eligibilityOutput');
+    let eligibilityResult = document.querySelector('textarea#eligibilityResult');
+    eligibilityForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let eligibilityData = new FormData(eligibilityForm);
+        eligibilityData.append('eligibility', eligibilityOutput.value);
+        eligibilityResult.innerHTML = eligibilityData.getAll('eligibility');
+    });
+
+    // Application
+    let applicationForm = document.getElementById('application');
+    let applicationOutput = document.querySelector('textarea#applicationOutput');
+    let applicationResult = document.querySelector('textarea#applicationResult');
+    applicationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let applicationData = new FormData(applicationForm);
+        applicationData.append('application', applicationOutput.value);
+        applicationResult.innerHTML = applicationData.getAll('application');
+    });
+
+    // Contact
+    let contactForm = document.getElementById('contact');
+    let contactOutput = document.querySelector('textarea#contactOutput');
+    let contactResult = document.querySelector('textarea#contactResult');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let contactData = new FormData(contactForm);
+        contactData.append('contact', contactOutput.value);
+        contactResult.innerHTML = contactData.getAll('contact');
+    });
+
+    // Summary
+    let summaryForm = document.getElementById('summary');
+    let summaryOutput = document.querySelector('textarea#summaryOutput');
+    let summaryResult = document.querySelector('textarea#summaryResult');
+    summaryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let summaryData = new FormData(summaryForm);
+        summaryData.append('summary', summaryOutput.value);
+        summaryResult.innerHTML = summaryData.getAll('summary');
     });
 
     // Functions
     function outputInput(e) {
         let value = document.querySelector(`label[for="${e.target.id}"]`).innerHTML;
-        output.value = value;
+        let targetOutput = document.querySelector(`textarea#${this.form.id}Output`);
+        targetOutput.value = value;
     }
     function updateTextInput(e) {
+        //fix to get all values from input 
         let editTarget = e.target;
         let value = editTarget.parentNode.innerHTML.replace(/\<input.*\>/i, editTarget.value);
-        output.value = value;
+        let targetOutput = document.querySelector(`textarea#${this.form.id}Output`);
+        targetOutput.value = value;
+    }
+    function toggleDisable(e) {
+        let targetElement = document.querySelector(`label[for="${this.id}"]`);
+        if (this.checked) {
+            if(targetElement.children !== 0) {
+                for(let i=0; i<targetElement.children.length; i++) {
+                    targetElement.children[i].disabled = false;
+                }
+            } else {
+                console.log('no child elements');
+            }
+        } 
     }
 });
-
-//grab all the inputs
-//loop through the inputs and attach function to get their innerHTML and change the output value to that value 
